@@ -1,6 +1,5 @@
-import javax.xml.bind.annotation.XmlRootElement;
-
 package webservice;
+import javax.xml.bind.annotation.XmlRootElement;
 
 
 @XmlRootElement
