@@ -9,10 +9,16 @@ import com.sun.net.httpserver.HttpServer;
    
 public class Servidor {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         URI endpoint = UriBuilder.fromUri("http://localhost/").port(9000).build();
         ResourceConfig calculadora_rc = new PackagesResourceConfig("webservice");
-        HttpServer server = HttpServerFactory.create(endpoint, calculadora_rc);
-        server.start();
+	try{
+        	HttpServer server = HttpServerFactory.create(endpoint, calculadora_rc);
+		server.start();
+	}
+	catch(IOException e){
+		e.printStackTrace();
+	}
+        
     }
 }
