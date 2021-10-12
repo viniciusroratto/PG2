@@ -14,7 +14,7 @@ public class Cliente {
         WebResource servico = cliente.resource("http://localhost:9000/calculadora");
 
         int a = 10;
-	int b = 20;
+	    int b = 20;
         WebResource servicoSomarInt = servico.path("multiplicarInt").path(a + "/" + b);
 
         ClientResponse respostaSomarInt = servicoSomarInt.accept(MediaType.APPLICATION_JSON).get(ClientResponse.class);
